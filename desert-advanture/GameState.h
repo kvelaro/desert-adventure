@@ -1,6 +1,12 @@
 #pragma once
+#include <iostream>
+#include <vector>
+#include "GameObject.h"
+using namespace std;
 class GameState
 {
+protected:
+	vector<GameObject*> m_gameObjects;
 public:
 	GameState();
 	~GameState();
