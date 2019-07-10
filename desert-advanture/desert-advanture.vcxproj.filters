@@ -42,6 +42,12 @@
     <ClInclude Include="StaticImage.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayState.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -69,6 +75,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="StaticImage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

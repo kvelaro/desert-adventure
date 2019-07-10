@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include "GameState.h"
+#include "GameStateMachine.h"
 #include "MenuState.h"
 using namespace std;
 using namespace sf;
@@ -11,8 +11,7 @@ class Game{
 	int m_desktopHeight;
 	static Game* spInstance;	
 	RenderWindow *m_window;
-
-	GameState *m_gameState;
+	GameStateMachine* m_gameStateMachine;	
 	
 public:
 	static Game* getInstance();
@@ -25,5 +24,6 @@ public:
 	RenderWindow* getWindow();
 	int getDesktopWidth();
 	int getDesktopHeight();
+	GameStateMachine* getStateMachine();
 };
 

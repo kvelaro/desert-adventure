@@ -18,7 +18,8 @@ void Game::init(string title)
 	m_desktopHeight = VideoMode::getDesktopMode().height;
 	VideoMode vm(m_desktopWidth, m_desktopHeight);
 	m_window = new RenderWindow(vm, title);
-	m_gameState = new MenuState();
+	m_gameStateMachine = new GameStateMachine();
+	m_gameStateMachine->pushState(new MenuState());
 }
 
 bool Game::isRunning() 
@@ -28,18 +29,18 @@ bool Game::isRunning()
 
 void Game::handleInput()
 {
-	m_gameState->handleInput();
+	m_gameStateMachine->getCurrentState()->handleInput();
 }
 
 void Game::update()
 {
-	m_gameState->update();
+	m_gameStateMachine->getCurrentState()->update();
 }
 
 void Game::draw()
 {
 	m_window->clear();
-	m_gameState->draw();
+	m_gameStateMachine->getCurrentState()->draw();
 	m_window->display();
 }
 
@@ -56,6 +57,11 @@ int Game::getDesktopWidth()
 int Game::getDesktopHeight()
 {
 	return m_desktopHeight;
+}
+
+GameStateMachine * Game::getStateMachine()
+{
+	return m_gameStateMachine;
 }
 
 void Game::quit() {
