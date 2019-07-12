@@ -17,7 +17,8 @@ void Game::init(string title)
 	m_desktopWidth = VideoMode::getDesktopMode().width;
 	m_desktopHeight = VideoMode::getDesktopMode().height;
 	VideoMode vm(m_desktopWidth, m_desktopHeight);
-	m_window = new RenderWindow(vm, title);
+	m_window = new RenderWindow(vm, title, Style::Fullscreen);
+	m_window->setFramerateLimit(60);
 	m_gameStateMachine = new GameStateMachine();
 	m_gameStateMachine->pushState(new MenuState());
 }
@@ -66,4 +67,9 @@ GameStateMachine * Game::getStateMachine()
 
 void Game::quit() {
 	m_window->close();
+}
+
+void Game::toggleSound()
+{
+	m_soundAllowed = !m_soundAllowed;
 }

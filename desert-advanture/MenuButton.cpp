@@ -50,3 +50,13 @@ void MenuButton::draw()
 {
 	Game::getInstance()->getWindow()->draw(m_spriteMenuButton);
 }
+
+string MenuButton::getID()
+{
+	return m_id;
+}
+
+FloatRect MenuButton::getRect()
+{
+	return m_spriteMenuButton.getGlobalBounds();
+}

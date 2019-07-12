@@ -22,7 +22,7 @@ void StaticImage::handleInput()
 }
 
 void StaticImage::update()
-{
+{	
 	m_spriteImage.setScale(m_scaleX, m_scaleY);
 	m_spriteImage.setPosition(m_positionX, m_positionY);
 }
@@ -30,4 +30,19 @@ void StaticImage::update()
 void StaticImage::draw()
 {
 	Game::getInstance()->getWindow()->draw(m_spriteImage);
+}
+
+string StaticImage::getID()
+{
+	return m_id;
+}
+
+Sprite * StaticImage::getSprite()
+{
+	return &m_spriteImage;
+}
+
+FloatRect StaticImage::getRect()
+{
+	return m_spriteImage.getGlobalBounds();
 }

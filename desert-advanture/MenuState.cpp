@@ -108,7 +108,7 @@ void MenuState::s_playCallback()
 
 void MenuState::s_soundCallback()
 {
-
+	Game::getInstance()->toggleSound();
 }
 
 bool MenuState::isMouseClicked()

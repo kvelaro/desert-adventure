@@ -3,6 +3,8 @@
 #include <SFML/Graphics.hpp>
 #include "GameStateMachine.h"
 #include "MenuState.h"
+#include "PlayState.h"
+#include "GameOverState.h"
 using namespace std;
 using namespace sf;
 
@@ -11,7 +13,8 @@ class Game{
 	int m_desktopHeight;
 	static Game* spInstance;	
 	RenderWindow *m_window;
-	GameStateMachine* m_gameStateMachine;	
+	GameStateMachine* m_gameStateMachine;
+	bool m_soundAllowed = true;
 	
 public:
 	static Game* getInstance();
@@ -25,5 +28,7 @@ public:
 	int getDesktopWidth();
 	int getDesktopHeight();
 	GameStateMachine* getStateMachine();
+	void toggleSound();
+	
 };
 

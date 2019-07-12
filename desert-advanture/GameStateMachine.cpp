@@ -13,12 +13,10 @@ void GameStateMachine::changeState(GameState * pState)
 	{
 		if (m_gameStates.back()->getStateID() != pState->getStateID())
 		{
-			this->pushState(pState);
+			this->popState();
 		}
 	}
-	else {
-		this->pushState(pState);
-	}
+	this->pushState(pState);
 }
 
 void GameStateMachine::popState()

@@ -20,13 +20,15 @@ class MenuButton :
 	double m_scaleX;
 	double m_scaleY;
 	void (*m_callback)();
-	
+protected:
+	string m_id = "MENUBUTTON";
 public:
 	MenuButton(string path, string pathActive, int positionX, int positionY, double scaleX, double scaleY, void(*callback)() = nullptr);
 	~MenuButton();
 	virtual void handleInput();
 	virtual void update();
 	virtual void draw();
-
+	virtual string getID();
+	FloatRect getRect();
 };
 
